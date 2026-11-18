@@ -4,6 +4,8 @@ This is a responsive concept website in Japanese, English and French for SONO's 
 
 The contact form creates a draft email addressed to `withsono.contact@gmail.com` in the visitor's mail app. The static site does not collect or store form submissions. A copy button is available if the visitor has no mail app configured.
 
+The SONO C1–a logo and symbol are exported as SVGs from the project's Figma identity file. `magazine.html` is a three-language editorial landing page. `magazine-yanesen.html` is a sample essay; the other story ideas are marked as in preparation. The magazine content is editorial prototype copy, not reported interviews or a final publication.
+
 ## GitHub Pages
 
 Publish the repository's `main` branch from `/ (root)` in **Settings → Pages**. The `.nojekyll` file is included for direct static publishing. No build step or backend is required.

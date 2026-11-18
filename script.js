@@ -32,20 +32,20 @@ const translations = {
 };
 
 Object.assign(translations.ja, {
-  primaryNavAria:'メインメニュー',languageAria:'表示言語',interludeAria:'東京の日常',faqKicker:'参加前に',heroTagline:'Tokyo, <i>at walking pace.</i>',
+  primaryNavAria:'メインメニュー',languageAria:'表示言語',interludeAria:'東京の日常',faqKicker:'参加前に',heroTagline:'Tokyo, <i>at walking pace.</i>',navMagazine:'Magazine',brandAria:'SONO ホーム',
   yanakaEyebrow:'Yanesen / Old Tokyo',kuramaeEyebrow:'Kuramae / Makers & cafés',kiyosumiEyebrow:'Kiyosumi / Rivers & quiet',formFrench:'フランス語',
   feature3Title:'日・英・仏のサイト',feature3Body:'サイトは3言語で閲覧できます。ガイドの対応言語はお問い合わせ時に確認します。',
   faq1Q:'どの言語で参加できますか？',faq1A:'サイトは日本語・英語・フランス語に対応しています。ガイドの対応言語はご希望を伺い、催行開始時に確認してご案内します。'
 });
 Object.assign(translations.en, {
-  primaryNavAria:'Main navigation',languageAria:'Display language',interludeAria:'Everyday Tokyo',faqKicker:'Good to know',heroTagline:'Tokyo, <i>at walking pace.</i>',
+  primaryNavAria:'Main navigation',languageAria:'Display language',interludeAria:'Everyday Tokyo',faqKicker:'Good to know',heroTagline:'Tokyo, <i>at walking pace.</i>',navMagazine:'Magazine',brandAria:'SONO home',
   yanakaEyebrow:'Yanesen / Old Tokyo',kuramaeEyebrow:'Kuramae / Makers & cafés',kiyosumiEyebrow:'Kiyosumi / Rivers & quiet',formFrench:'French',
   feature3Title:'A site in three languages',feature3Body:'Explore the site in Japanese, English or French. Guiding language is confirmed when you enquire.',
   faq1Q:'Which languages are available?',faq1A:'The site is available in Japanese, English and French. Please tell us your preferred guiding language; availability will be confirmed when tours launch.'
 });
 translations.fr = {
   previewBanner:'SITE SONO EN PRÉPARATION — Parcours et tarifs provisoires. Réservations et paiements réels indisponibles.',mailButton:'Ouvrir mon application e-mail ↗',skip:'Aller au contenu',menuLabel:'Ouvrir le menu',close:'Fermer',navAbout:'À propos',navTours:'Balades',navApproach:'L’esprit',navFaq:'FAQ',navBook:'Contact <span aria-hidden="true">↗</span>',primaryNavAria:'Navigation principale',languageAria:'Langue du site',
-  heroKicker:'Un autre regard sur Tokyo',heroTitle1:'Tokyo, au-delà',heroTitle2:'des incontournables.',heroTagline:'Tokyo, <i>au rythme de la marche.</i>',heroDescription:'Un café au bout d’une ruelle. Une adresse nouvelle parmi les maisons anciennes. Avec un guide, découvrez les petites histoires qui habitent le Tokyo de tous les jours.',heroExplore:'Découvrir les balades',heroCaption:'Yanaka Ginza, Tokyo',heroAlt:'Passants dans la rue commerçante de Yanaka Ginza',
+  heroKicker:'Un autre regard sur Tokyo',heroTitle1:'Tokyo, au-delà',heroTitle2:'des évidences.',heroTagline:'Tokyo, <i>au rythme de la marche.</i>',heroDescription:'Un café au bout d’une ruelle. Une adresse nouvelle parmi les maisons anciennes. Avec un guide, découvrez les petites histoires qui habitent le Tokyo de tous les jours.',heroExplore:'Découvrir les balades',heroCaption:'Yanaka Ginza, Tokyo',heroAlt:'Passants dans la rue commerçante de Yanaka Ginza',
   introAside:'Le Tokyo entre deux destinations.',introKicker:'Connaître un quartier, c’est rencontrer sa vie quotidienne.',introTitle:'Tokyo se révèle aussi<br>loin des grands sites.',introBody:'Une rue commerçante de longue date, un atelier où le geste se transmet, le calme d’une rivière. Nos balades imaginées invitent à ralentir et à entrer, un instant, dans le rythme du quartier.',introBody2:'Chaque parcours proposé se concentre sur un seul secteur. Un petit groupe laisse de la place aux échanges, à la curiosité et aux détours.',
   toursKicker:'Explorer les quartiers',toursTitle:'Choisissez votre quartier.',toursLead:'Chaque itinéraire commence dans le Tokyo du quotidien. Quel quartier avez-vous envie de découvrir ?',yanakaTitle:'Yanesen, traces du quotidien',kuramaeTitle:'Kuramae, quartier des créateurs',kiyosumiTitle:'Kiyosumi, entre eau et calme',yanakaEyebrow:'Yanesen / Vieux Tokyo',kuramaeEyebrow:'Kuramae / Ateliers et cafés',kiyosumiEyebrow:'Kiyosumi / Rivières et calme',yanakaMeta:'Yanaka, Nezu et Sendagi / env. 2 h 30',kuramaeMeta:'Kuramae et Asakusabashi / env. 3 h',kiyosumiMeta:'Kiyosumi et Monzennakachō / env. 3 h',smallGroup:'Groupe privé',yanakaAlt:'Rue commerçante de Yanaka',kuramaeAlt:'Fleurs et rue près du sanctuaire Kuramae',kiyosumiAlt:'Étang et verdure du jardin Kiyosumi',provisionalNote:'Parcours, durées et tarifs sont indicatifs. Aucune visite n’est actuellement proposée à la réservation sur ce site.',
   museumKicker:'Édition musée / projet',museumTitle:'Un quartier, puis un musée.',museumBody:'Prolongez la balade dans un musée lié à l’histoire du quartier. Parmi les pistes : le musée de sculpture Asakura à Yanesen, le musée Sumida Hokusai près de Kuramae et le musée d’art contemporain de Tokyo à Kiyosumi. Les billets pour le jour de la visite seraient organisés à l’avance.',museumPrice:'68 000 ¥ <span>/ groupe privé, tarif indicatif</span>',museumTerms:'Environ 4 h pour 1 à 4 personnes. Ce tarif envisagé comprend un guide privé, la préparation du parcours, l’organisation des billets et l’entrée dans un musée choisi, dans la limite de 2 500 ¥ par personne. Musée, exposition et disponibilité sont à confirmer avant tout paiement. Les éventuels suppléments, repas et transports seraient indiqués séparément.',museumAsk:'Parler de cette formule <span aria-hidden="true">↗</span>',museumFormOption:'Édition musée (quartier à définir)',testCheckoutLink:'Voir le paiement test Stripe ↗',testCheckoutNote:'Mode test uniquement : aucun débit réel ni aucune réservation. Aucune carte bancaire n’est nécessaire.',
@@ -58,6 +58,7 @@ translations.fr = {
   dialogArea:'Quartier',dialogDuration:'Durée',dialogGroup:'Participants',dialogPrice:'Tarif indicatif',dialogHighlights:'Au fil de la balade',dialogIncludedTitle:'Compris',dialogIncludedBody:'Guide privé et proposition de parcours',dialogExcludedTitle:'Non compris',dialogExcludedBody:'Repas, transports et entrées',dialogNote:'Parcours et prix indicatifs. Ce site ne prend pas encore de réservations.',dialogAsk:'Se renseigner sur cette balade',
   inquiryTextTitle:'SONO / Balades à Tokyo — demande (prototype)',inquiryTextName:'Nom',inquiryTextEmail:'E-mail',inquiryTextTour:'Balade',inquiryTextDate:'Date souhaitée',inquiryTextPeople:'Participants',inquiryTextLanguage:'Langue souhaitée',inquiryTextMessage:'Message',inquiryTextEmpty:'Non renseigné',inquiryTextCaveat:'Demande concernant un projet de balade, sans réservation.'
 };
+Object.assign(translations.fr, {navMagazine:'Magazine',brandAria:'SONO, accueil'});
 
 const tours = {
   yanaka: {
@@ -107,7 +108,6 @@ function setLanguage(language) {
   document.querySelector('textarea[name="message"]').placeholder = {ja:'歩きたい場所や興味のあること',en:'Places or themes you are curious about',fr:'Quartiers ou thèmes qui vous intéressent'}[language];
   document.title = {ja:'SONO — 東京の街歩き・カルチャーツアー構想',en:'SONO — Tokyo walking tour concepts',fr:'SONO — Projets de balades culturelles à Tokyo'}[language];
   document.querySelector('meta[name="description"]').content = {ja:'SONOが構想する、東京の街歩き・カルチャーツアーの試作サイト。東京の日常を歩く速さで見つめます。',en:'A SONO prototype exploring private neighbourhood walks in Tokyo. Tours and prices are illustrative.',fr:'Découvrez le projet SONO : des balades privées dans les quartiers de Tokyo. Parcours et tarifs indicatifs.'}[language];
-  document.querySelector('.brand').setAttribute('aria-label', {ja:'SONO ホーム',en:'SONO home',fr:'SONO, accueil'}[language]);
   document.querySelector('#mail-button').textContent = translations[language].mailButton;
   document.querySelector('select[name="language"]').value = language;
   if (activeTour) populateDialog(activeTour);

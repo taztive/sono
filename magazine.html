@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja" data-page="magazine">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="SONO Magazine。東京の街、つくる人、日々の文化を、歩く速さで読む編集ページ。記事は試作原稿です。" />
+    <title>SONO Magazine — 東京を、歩く速さで読む</title>
+    <link rel="icon" type="image/svg+xml" href="./sono-mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./magazine.css" />
+    <script src="./magazine.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">本文へ移動</a>
+    <div class="preview-banner" role="status" data-i18n="prototype">SONO Magazine 創刊準備号 — 掲載内容は編集サンプルです。</div>
+    <header class="site-header mag-header">
+      <div class="header-inner">
+        <a class="brand" href="./index.html" data-i18n-aria="brandAria" aria-label="SONO ホーム"><img class="brand-logo" src="./sono-logo.svg" width="589" height="114" alt="" /></a>
+        <nav class="mag-nav" aria-label="メインメニュー" data-i18n-aria="navAria">
+          <a href="./index.html#tours" data-i18n="navWalks">街歩き</a>
+          <a href="./magazine.html" aria-current="page">Magazine</a>
+          <a href="./index.html#inquiry" data-i18n="navContact">お問い合わせ</a>
+        </nav>
+        <div class="language-switch" role="group" aria-label="表示言語" data-i18n-aria="languageAria"><button type="button" class="lang-button is-active" data-lang="ja" aria-pressed="true">JP</button><span aria-hidden="true">/</span><button type="button" class="lang-button" data-lang="en" aria-pressed="false">EN</button><span aria-hidden="true">/</span><button type="button" class="lang-button" data-lang="fr" aria-pressed="false">FR</button></div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="mag-masthead page-pad">
+        <div class="mag-masthead-top"><span>SONO / TOKYO</span><span data-i18n="issue">創刊準備号 · 00</span></div>
+        <h1>Magazine<span class="mag-period">.</span></h1>
+        <div class="mag-masthead-bottom"><p data-i18n="tagline">東京の街、つくる人、日々の文化を、歩く速さで読む。</p><p data-i18n="intro">観光の地図から少し離れて、そこに暮らす時間を見つめる小さな読み物です。</p></div>
+      </section>
+
+      <section class="mag-feature page-pad" aria-labelledby="feature-title">
+        <a class="mag-feature-photo" href="./magazine-yanesen.html" aria-label="谷根千の記事を読む" data-i18n-aria="featureImageAria"><img src="https://images.unsplash.com/photo-1623733769741-7a1466644e69?auto=format&fit=crop&w=1700&q=85" alt="谷中銀座の通り" data-i18n-alt="yanakaAlt" /></a>
+        <div class="mag-feature-copy">
+          <p class="mag-label" data-i18n="featureLabel">最初の一篇 / 街のノート</p>
+          <h2 id="feature-title" data-i18n="featureTitle">谷根千を、<br />急がずに歩く。</h2>
+          <p class="mag-feature-deck" data-i18n="featureDeck">商店街から一本横へ。目的地のあいだにある風景を見つめる、SONO Magazine最初の試作原稿。</p>
+          <a class="mag-read-link" href="./magazine-yanesen.html"><span data-i18n="readStory">記事を読む</span><span aria-hidden="true">↗</span></a>
+          <p class="mag-photo-note" data-i18n="featureCredit">写真：Nakaharu Line / Unsplash</p>
+        </div>
+      </section>
+
+      <section class="mag-notes page-pad" aria-labelledby="notes-title">
+        <div class="mag-section-head"><h2 id="notes-title" data-i18n="notesTitle">街の断片</h2><p data-i18n="notesIntro">次に見つめたい東京の風景。以下は記事企画で、取材・公開前です。</p></div>
+        <div class="mag-note-grid">
+          <article class="mag-note"><img src="https://images.unsplash.com/photo-1709651141551-37a84f1f7404?auto=format&fit=crop&w=1000&q=82" alt="蔵前神社と周辺の街並み" data-i18n-alt="kuramaeAlt" loading="lazy" /><div class="mag-note-meta"><span>Kuramae</span><span data-i18n="planned">準備中</span></div><h3 data-i18n="note1Title">つくる手と、川の近くで。</h3><p data-i18n="note1Body">問屋街の記憶と新しい店が並ぶ蔵前。建物の表情や、ものをつくる場所の距離感をたどる企画です。</p></article>
+          <article class="mag-note"><img src="https://images.unsplash.com/photo-1737949963654-0cfaacd7330c?auto=format&fit=crop&w=1000&q=82" alt="清澄庭園の水辺" data-i18n-alt="kiyosumiAlt" loading="lazy" /><div class="mag-note-meta"><span>Kiyosumi</span><span data-i18n="planned">準備中</span></div><h3 data-i18n="note2Title">水辺に残る、静かな時間。</h3><p data-i18n="note2Body">庭園、運河、倉庫を生かした空間。清澄白河を「余白」という視点で歩く企画です。</p></article>
+        </div>
+      </section>
+
+      <section class="mag-endnote page-pad"><span class="mag-endnote-mark"><img src="./sono-mark.svg" width="153" height="153" alt="" /></span><div><h2 data-i18n="endTitle">街の話を、続けましょう。</h2><p data-i18n="endBody">SONO Magazineは準備中です。見てみたい場所やテーマがあれば、お聞かせください。</p><a class="mag-read-link" id="mag-contact" href="mailto:withsono.contact@gmail.com"><span data-i18n="endCta">テーマを送る</span><span aria-hidden="true">↗</span></a></div></section>
+    </main>
+
+    <footer class="site-footer page-pad"><div class="footer-top"><div><a class="brand footer-brand" href="./index.html" data-i18n-aria="brandAria" aria-label="SONO ホーム"><img class="brand-logo" src="./sono-logo.svg" width="589" height="114" alt="" /></a><p data-i18n="footerTagline">東京を、歩く速さで。</p></div><a class="footer-back" href="#main" data-i18n="backTop">ページの先頭へ ↑</a></div><div class="footer-bottom"><span>© 2026 SONO</span><span data-i18n="footerNote">Magazineは試作版です。記事企画と内容は仮設定です。</span><a class="footer-contact" href="mailto:withsono.contact@gmail.com">withsono.contact@gmail.com</a></div><div class="credits"><span data-i18n="creditsIntro">写真：Unsplashより。撮影地は提供元情報に基づきます。</span><a href="https://unsplash.com/photos/people-walking-on-sidewalk-near-buildings-during-daytime-wdzmvW246-o" target="_blank" rel="noopener">Yanaka — Nakaharu Line</a><a href="https://unsplash.com/photos/a-tree-with-purple-flowers-in-front-of-a-building-jb5xGWgbrzw" target="_blank" rel="noopener">Kuramae — Lucius Hunter</a><a href="https://unsplash.com/photos/a-tree-that-is-sitting-in-the-water-r692cLTwbGE" target="_blank" rel="noopener">Kiyosumi — Diana Bondarenko</a></div></footer>
+  </body>
+</html>
