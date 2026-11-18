@@ -73,3 +73,7 @@ TikTok: Login Kit Webの仕様によりHTTPSのリダイレクトURLが必須で
 - https://developers.google.com/identity/protocols/oauth2/web-server
 - https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/business-login
 - https://developers.tiktok.com/docs/en/login-kit-web
+
+### YouTube設定ファイルの読み込み
+
+接続画面にGoogle Cloudの設定手順とリダイレクトURLのコピーを追加。ウェブアプリ用クライアント作成時のJSONを選ぶと、種類と登録URLを検証して既存の認証済みAPI経由でID・Secretだけを暗号化保存します。ファイル内の認証先URLは使いません。ファイル自体は保存せず、読み込み後は選択をクリアします。アプリ登録と本人の同意はGoogle側で必要です。設定JSONはチャットやGitHubにアップロードしないでください。
