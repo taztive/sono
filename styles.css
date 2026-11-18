@@ -19,3 +19,4 @@ html[lang="fr"] .hero-english{font-size:clamp(29px,3vw,47px);line-height:1.2}
 html[lang="fr"] .primary-nav{gap:clamp(13px,1.4vw,25px)}
 html[lang="fr"] .header-actions{gap:clamp(12px,1.4vw,25px)}
 @media(max-width:640px){html[lang="fr"] .hero h1{font-size:clamp(32px,8.3vw,45px)}html[lang="fr"] .hero-english{font-size:clamp(29px,7.5vw,38px)}}
+@media(max-width:850px){html[lang="fr"] .primary-nav{gap:0}}
