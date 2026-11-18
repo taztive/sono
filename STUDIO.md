@@ -26,7 +26,7 @@
 
 企画・原稿生成は編集テンプレートを使い、外部AIや調査サービスは呼びません。実際の取材内容・出典・写真を編集してください。Vコンは絵コンテのテキストを映像にした音声なしの確認用動画で、完成動画の自動生成ではありません。写真URLは誌面とVコンに反映します。動画に利用する写真はCORS許可のある配信元が必要です。読み込めない場合は画づくりの指示を表示します。
 
-SNS OAuth接続と実投稿ワーカーは未実装です。投稿予定は `pending_connection` のまま保存され、時刻が過ぎても投稿済みにはなりません。SNSへの投稿や自動投稿ができる状態とは表示しません。Magazineの実投稿先・動画の実投稿先を接続する必要があります。
+SNS OAuth接続はアプリ設定画面・認証開始・コールバック・アカウント名取得まで実装しています。実アカウントでの接続検証と実投稿ワーカーは未完了です。投稿予定は `pending_connection` のまま保存され、時刻が過ぎても投稿済みにはなりません。SNSへの投稿や自動投稿ができる状態とは表示しません。Magazineの実投稿先・動画の実投稿先を接続する必要があります。
 
 ## データとセキュリティ
 
@@ -48,3 +48,28 @@ Node.js 24の常駐プロセス、HTTPSリバースプロキシ、永続ディ�
 ## テスト
 
 `npm test`。公開データの分離、公開スナップショット、競合防止、アーカイブ、予約の未送信状態、入力検証、永続化を検証。
+
+
+## アカウント接続（2026-11-19）
+
+サーバーを再起動し、管理画面の「接続・バックアップ」を開いてください。
+
+1. 各SNSの「開発者設定を開く」でSONO用アプリを登録します。
+2. 画面に表示されたリダイレクトURLを完全一致で登録します。
+3. Client ID / App ID と Client Secretを管理画面の設定欄に入力・保存します。SNSのログインパスワードとは異なります。
+4. 「接続する」からSNS側でログイン・連携許可します。本人確認できたアカウント名を表示します。
+
+YouTube: Google CloudでYouTube Data API v3を有効化し、OAuth同意画面のテストユーザーに自分を追加、ウェブアプリ用OAuthクライアントを作成。ローカルでも接続可能です。
+
+Instagram: プロアカウント（ビジネス・クリエイター）向け。MetaアプリのInstagram Login設定を使用します。現在の実装はHTTPS公開環境でのみ接続開始を許可します。
+
+TikTok: Login Kit Webの仕様によりHTTPSのリダイレクトURLが必須です。ローカルHTTPでは接続できません。
+
+今回要求する権限はアカウント確認用の最小限（YouTube readonly / Instagram business basic / TikTok user.info.basic）です。動画アップロード・投稿・統計収集は行いません。認証キーとトークンはAES-256-GCMで暗号化し、鍵はデータディレクトリのoauth.key（600）に保存。JSONバックアップに認証情報は含めません。期限切れでは再接続が必要で、自動更新は未実装です。「接続を削除」はStudio内の認証情報削除のみ。SNS側の許可は各SNSの連携アプリ設定で解除してください。
+
+セッションに紐づけた一回限りのstate、別Cookieによるブラウザ紐付け、10分の期限、コールバックの再利用拒否を実装。実際のSNS通信は認証キー未設定のため未検証です。自動テストはプロバイダー応答を模擬して検証しています。
+
+公式仕様:
+- https://developers.google.com/identity/protocols/oauth2/web-server
+- https://developers.facebook.com/documentation/instagram-platform/instagram-api-with-instagram-login/business-login
+- https://developers.tiktok.com/docs/en/login-kit-web

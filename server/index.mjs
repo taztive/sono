@@ -6,6 +6,7 @@ import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { Store } from './store.mjs';
+import { OAuth } from './oauth.mjs';
 import { generateOutline } from './model.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
@@ -16,6 +17,7 @@ export function createApp({dataDir=join(homedir(),'.sono-studio'),host='127.0.0.
  const store=new Store(join(dataDir,'studio.sqlite'));chmodSync(join(dataDir,'studio.sqlite'),0o600);
  const setupToken=store.setting('password')?null:randomBytes(32).toString('hex');
  const attempts=new Map();
+ const oauth=new OAuth(store,dataDir);
  function issueSession(res){const token=randomBytes(32).toString('hex'),csrf=randomBytes(24).toString('hex');store.db.prepare('INSERT INTO sessions VALUES(?,?,?)').run(sha(token),csrf,Date.now()+8*3600000);res.setHeader('Set-Cookie',`sono_session=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=28800${secure?'; Secure':''}`);return csrf;}
  async function body(req){let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>1_000_000){const e=new Error('データが大きすぎます');e.status=413;throw e;}}try{return JSON.parse(text||'{}');}catch{throw new Error('JSONが不正です');}}
  function json(res,status,data){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8'});res.end(JSON.stringify(data));}
@@ -30,7 +32,16 @@ export function createApp({dataDir=join(homedir(),'.sono-studio'),host='127.0.0.
    if(writes){if(req.headers.origin!==requestOrigin){json(res,403,{error:'Originの検証に失敗しました'});return;}if(!String(req.headers['content-type']).startsWith('application/json')){json(res,415,{error:'JSONが必要です'});return;}}
    const cookie=(req.headers.cookie||'').match(/(?:^|; )sono_session=([a-f0-9]{64})(?:;|$)/)?.[1];
    const session=cookie?store.db.prepare('SELECT * FROM sessions WHERE hash=? AND expires>?').get(sha(cookie),Date.now()):null;
-   if(path==='/api/session'&&req.method==='GET'){json(res,200,{authenticated:!!session,setupRequired:!store.setting('password'),csrf:session?.csrf||null,mode:origin?'hosted':'local',publicUrl:'/plans',connections:{instagram:false,youtube:false,tiktok:false}});return;}
+   const oauthCallback=path.match(/^\/api\/oauth\/(youtube|instagram|tiktok)\/callback$/);
+   if(oauthCallback&&req.method==='GET'){
+    const binding=(req.headers.cookie||'').match(/(?:^|; )sono_oauth=([a-f0-9]{64})(?:;|$)/)?.[1];
+    let message;
+    try{await oauth.callback(oauthCallback[1],url.searchParams,binding);message='connected';}
+    catch(e){message=e.message;}
+    res.setHeader('Set-Cookie',`sono_oauth=; Path=/api/oauth; HttpOnly; SameSite=Lax; Max-Age=0${secure?'; Secure':''}`);
+    res.statusCode=303;res.setHeader('Location','/admin#connections='+encodeURIComponent(message));res.end();return;
+   }
+   if(path==='/api/session'&&req.method==='GET'){json(res,200,{authenticated:!!session,setupRequired:!store.setting('password'),csrf:session?.csrf||null,mode:origin?'hosted':'local',publicUrl:'/plans'});return;}
    if((path==='/api/setup'||path==='/api/login')&&req.method==='POST'){
     const ip=req.socket.remoteAddress;const rate=attempts.get(ip)||{n:0,until:Date.now()+900000};if(rate.until<Date.now()){rate.n=0;rate.until=Date.now()+900000;}rate.n++;attempts.set(ip,rate);if(rate.n>12){json(res,429,{error:'試行回数が多すぎます。15分後に再試行してください'});return;}
     const b=await body(req);if(typeof b.password!=='string'||b.password.length>512)throw new Error('パスワードを確認してください');
@@ -46,6 +57,16 @@ export function createApp({dataDir=join(homedir(),'.sono-studio'),host='127.0.0.
    if(path.startsWith('/api/admin/')){
     if(!session){json(res,401,{error:'ログインしてください'});return;}
     if(writes&&!secureEqual(String(req.headers['x-csrf-token']||''),session.csrf)){json(res,403,{error:'セッションを再読み込みしてください'});return;}
+    if(path==='/api/admin/connections'&&req.method==='GET'){json(res,200,oauth.status(requestOrigin));return;}
+    const connectionRoute=path.match(/^\/api\/admin\/connections\/(youtube|instagram|tiktok)\/(configure|start|disconnect)$/);
+    if(connectionRoute&&req.method==='POST'){
+     const [,provider,action]=connectionRoute;
+     if(action==='configure'){oauth.configure(provider,await body(req));json(res,200,{ok:true});return;}
+     if(action==='disconnect'){oauth.disconnect(provider);json(res,200,{ok:true});return;}
+     const result=oauth.start(provider,session.hash,requestOrigin);
+     res.setHeader('Set-Cookie',`sono_oauth=${result.binding}; Path=/api/oauth; HttpOnly; SameSite=Lax; Max-Age=600${secure?'; Secure':''}`);
+     json(res,200,{url:result.url});return;
+    }
     if(path==='/api/admin/logout'&&req.method==='POST'){store.db.prepare('DELETE FROM sessions WHERE hash=?').run(session.hash);res.setHeader('Set-Cookie','sono_session=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0');json(res,200,{ok:true});return;}
     if(path==='/api/admin/records'){
      if(req.method==='GET'){json(res,200,store.list());return;}
