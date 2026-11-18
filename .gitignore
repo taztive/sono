@@ -1,0 +1,7 @@
+.env*
+!.env.example
+*.sqlite*
+node_modules/
+.DS_Store
+runtime/
+test-results/

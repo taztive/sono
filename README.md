@@ -11,3 +11,9 @@ The SONO C1–a logo and symbol are exported as SVGs from the project's Figma id
 Publish the repository's `main` branch from `/ (root)` in **Settings → Pages**. The `.nojekyll` file is included for direct static publishing. No build step or backend is required.
 
 Before using the URL for Stripe's live account review, replace concept routes and prices with actual offers; add the legally required commercial disclosure, cancellation/refund terms and privacy notice; verify the business and payout account in Stripe; and test the complete enquiry-to-payment flow.
+
+## SONO Studio
+
+The repository also contains an authenticated local editing studio for experience plans, magazine layouts, video storyboards/V-cons, and a posting queue. See [STUDIO.md](STUDIO.md) for startup, security, and deployment instructions. Start with `npm start` (Node.js 24+) or double-click `start-studio.command` on Mac.
+
+The studio backend does not run on GitHub Pages. SNS accounts are not connected; scheduled posts remain unsent. Analytics is intentionally marked Coming soon.

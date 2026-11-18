@@ -1,0 +1,5 @@
+{
+  "name": "sono-studio", "version": "1.0.0", "private": true, "type": "module",
+  "engines": {"node": ">=24"},
+  "scripts": {"start": "node server/index.mjs", "test": "node --test tests/*.test.mjs"}
+}

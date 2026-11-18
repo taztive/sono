@@ -1,0 +1,11 @@
+*
+!package.json
+!index.html
+!styles.css
+!script.js
+!sono-logo.svg
+!sono-mark.svg
+!server/
+!server/**
+!admin/
+!admin/**
