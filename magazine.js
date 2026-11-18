@@ -29,6 +29,9 @@ const magazineTranslations = {
 };
 
 const savedMagazineLanguage = localStorage.getItem('tokyoSlowlyLanguage');
+Object.assign(magazineTranslations.ja, {siteInfo:'サイト情報',privacyLink:'プライバシーポリシー',termsLink:'予約・キャンセル方針',commerceLink:'特定商取引法に基づく表示',featureCredit:'谷中銀座、東京',heroCredit:'谷中銀座、東京'});
+Object.assign(magazineTranslations.en, {siteInfo:'Site information',privacyLink:'Privacy policy',termsLink:'Booking & cancellation',commerceLink:'Commercial disclosure',featureCredit:'Yanaka Ginza, Tokyo',heroCredit:'Yanaka Ginza, Tokyo'});
+Object.assign(magazineTranslations.fr, {siteInfo:'Informations du site',privacyLink:'Confidentialité',termsLink:'Réservation et annulation',commerceLink:'Mentions commerciales',featureCredit:'Yanaka Ginza, Tokyo',heroCredit:'Yanaka Ginza, Tokyo'});
 const pageKind = document.documentElement.dataset.page;
 
 function setMagazineLanguage(language) {

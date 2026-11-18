@@ -59,6 +59,9 @@ translations.fr = {
   inquiryTextTitle:'SONO / Balades à Tokyo — demande (prototype)',inquiryTextName:'Nom',inquiryTextEmail:'E-mail',inquiryTextTour:'Balade',inquiryTextDate:'Date souhaitée',inquiryTextPeople:'Participants',inquiryTextLanguage:'Langue souhaitée',inquiryTextMessage:'Message',inquiryTextEmpty:'Non renseigné',inquiryTextCaveat:'Demande concernant un projet de balade, sans réservation.'
 };
 Object.assign(translations.fr, {navMagazine:'Magazine',brandAria:'SONO, accueil'});
+Object.assign(translations.ja, {siteInfo:'サイト情報',privacyLink:'プライバシーポリシー',termsLink:'予約・キャンセル方針',commerceLink:'特定商取引法に基づく表示'});
+Object.assign(translations.en, {siteInfo:'Site information',privacyLink:'Privacy policy',termsLink:'Booking & cancellation',commerceLink:'Commercial disclosure'});
+Object.assign(translations.fr, {siteInfo:'Informations du site',privacyLink:'Confidentialité',termsLink:'Réservation et annulation',commerceLink:'Mentions commerciales'});
 
 const tours = {
   yanaka: {

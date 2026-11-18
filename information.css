@@ -1,0 +1,35 @@
+.locale-inline,.lang-copy{display:none}
+html[lang="ja"] .locale-inline[data-locale="ja"],html[lang="en"] .locale-inline[data-locale="en"],html[lang="fr"] .locale-inline[data-locale="fr"]{display:inline}
+.footer-bottom .locale-inline{display:none}
+html[lang="ja"] .footer-bottom .locale-inline[data-locale="ja"],html[lang="en"] .footer-bottom .locale-inline[data-locale="en"],html[lang="fr"] .footer-bottom .locale-inline[data-locale="fr"]{display:inline}
+html[lang="ja"] .lang-copy[data-locale="ja"],html[lang="en"] .lang-copy[data-locale="en"],html[lang="fr"] .lang-copy[data-locale="fr"]{display:block}
+.info-hero{padding-top:clamp(75px,9vw,140px);padding-bottom:clamp(65px,8vw,110px);border-bottom:1px solid var(--line)}
+.info-hero .section-kicker{margin-bottom:30px}
+.info-hero h1{font-family:var(--serif);font-size:clamp(48px,8vw,112px);line-height:1.18;letter-spacing:-.025em;margin:0 0 33px}
+.info-period{font-family:var(--roman);color:var(--sage)}
+.info-intro{max-width:700px;font-size:clamp(14px,1.3vw,18px);line-height:2.05;color:#505c52;margin-bottom:65px}
+.info-updated{font-family:var(--roman);font-size:15px;letter-spacing:.1em;color:var(--quiet);margin:0}
+.info-layout{display:grid;grid-template-columns:minmax(200px,26%) minmax(0,1fr);gap:clamp(50px,7vw,130px);padding-top:75px;padding-bottom:140px;max-width:1600px;margin:auto}
+.info-nav{align-self:start;position:sticky;top:115px;display:grid;gap:14px}
+.info-nav p{font-family:var(--roman);font-size:17px;color:var(--sage);letter-spacing:.05em;margin:0 0 17px}
+.info-nav a{font-size:11px;color:#4c574e;border-bottom:1px solid var(--line);padding-bottom:11px;line-height:1.5}
+.info-nav a:hover,.info-content a:hover{color:var(--sage)}
+.info-section{scroll-margin-top:110px;border-bottom:1px solid var(--line);padding:0 0 92px;margin-bottom:88px}
+.info-section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.info-index{font-family:var(--roman);font-size:17px;letter-spacing:.07em;color:var(--sage);margin-bottom:25px}
+.info-section h2{font-family:var(--serif);font-size:clamp(30px,3.1vw,46px);letter-spacing:.035em;line-height:1.45;margin:0 0 35px;text-wrap:balance}
+.info-section h3{font-family:var(--serif);font-size:19px;letter-spacing:.025em;margin:37px 0 12px}
+.info-section p{font-size:12px;line-height:2.25;color:#515b52;max-width:760px}
+.info-section .info-lead{font-size:15px;line-height:2.1;color:var(--ink);margin-bottom:33px}
+.info-section .info-pending{background:#f3f5f1;border-left:2px solid #9aac9c;padding:20px 22px;margin:35px 0 0;color:#4e5a50;font-size:11px}
+.info-content a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.info-table{border-top:1px solid var(--line);margin:37px 0 0}
+.info-table>div{display:grid;grid-template-columns:minmax(155px,34%) 1fr;gap:20px;border-bottom:1px solid var(--line);padding:15px 0}
+.info-table dt{font-size:11px;color:var(--quiet)}
+.info-table dd{font-size:12px;line-height:1.8;margin:0}
+.credit-list{list-style:none;padding:0;margin:35px 0 0;border-top:1px solid var(--line)}
+.credit-list li{display:grid;grid-template-columns:minmax(155px,34%) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.credit-list li>span{font-family:var(--roman);font-size:15px;color:var(--sage);letter-spacing:.05em}
+.credit-list a{display:flex;justify-content:space-between;gap:20px;font-size:13px;text-decoration:none;border-bottom:0}
+@media(max-width:850px){.info-layout{grid-template-columns:1fr;gap:70px}.info-nav{position:static;grid-template-columns:1fr 1fr;gap:12px 25px}.info-nav p{grid-column:1/-1}}
+@media(max-width:640px){.info-hero{padding-top:73px;padding-bottom:75px}.info-hero h1{font-size:clamp(42px,11vw,64px);overflow-wrap:anywhere}.info-intro{margin-bottom:50px}.info-layout{padding-top:55px;padding-bottom:80px;gap:75px}.info-nav{grid-template-columns:1fr;gap:9px}.info-nav p{margin-bottom:9px}.info-section{padding-bottom:75px;margin-bottom:68px}.info-section h2{font-size:30px}.info-section .info-lead{font-size:14px}.info-table>div,.credit-list li{grid-template-columns:1fr;gap:4px}.credit-list a{font-size:14px}}

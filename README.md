@@ -10,7 +10,7 @@ The SONO C1–a logo and symbol are exported as SVGs from the project's Figma id
 
 Publish the repository's `main` branch from `/ (root)` in **Settings → Pages**. The `.nojekyll` file is included for direct static publishing. No build step or backend is required.
 
-Before using the URL for Stripe's live account review, replace concept routes and prices with actual offers; add the legally required commercial disclosure, cancellation/refund terms and privacy notice; verify the business and payout account in Stripe; and test the complete enquiry-to-payment flow.
+The public `information.html` contains pre-launch privacy, booking/cancellation, commercial-disclosure and photo-credit sections in Japanese, English and French. Missing legal operator and sales terms are marked as to be confirmed. Complete these before live sales; see [LAUNCH_REQUIREMENTS.md](LAUNCH_REQUIREMENTS.md) for source links and the engineer handoff. The website has no live booking or payment flow.
 
 ## SONO Studio
 
