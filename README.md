@@ -1,6 +1,6 @@
 # SONO / Tokyo Walks — public test site
 
-This is a bilingual, responsive concept website for SONO's possible Tokyo walking and culture tours. Routes, durations, museum arrangements and prices are illustrative. It does not accept bookings or live payments.
+This is a responsive concept website in Japanese, English and French for SONO's possible Tokyo walking and culture tours. Routes, durations, museum arrangements and prices are illustrative. It does not accept bookings or live payments. The website's languages do not guarantee that a guide can lead a tour in each language; guiding language is confirmed after an enquiry.
 
 The contact form creates a draft email addressed to `withsono.contact@gmail.com` in the visitor's mail app. The static site does not collect or store form submissions. A copy button is available if the visitor has no mail app configured.
 
